@@ -12,16 +12,20 @@ import SPACING from '../config/SPACING';
 import { BlurView } from 'expo-blur';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../config/colors';
+import SearchField from '../components/SearchField';
 
 const avatar = require('../../assets/avatar.jpg');
 
 export default function HomeScreen() {
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView
+        style={{
+          padding: SPACING,
+        }}
+      >
         <View
           style={{
-            padding: SPACING,
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}
@@ -76,6 +80,20 @@ export default function HomeScreen() {
             </BlurView>
           </View>
         </View>
+
+        <View style={{ width: '80%', marginVertical: SPACING * 3 }}>
+          <Text
+            style={{
+              color: colors.white,
+              fontSize: SPACING * 3.5,
+              fontWeight: '600',
+            }}
+          >
+            Find the best coffe for you
+          </Text>
+        </View>
+
+        <SearchField />
       </ScrollView>
     </SafeAreaView>
   );
